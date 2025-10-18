@@ -54,38 +54,38 @@ What It Detects:
 ⚠️ Suspicious link combinations
 
 🛠️ Installation
+
 Prerequisites
+
 Python 3.8 or higher
 
 pip (Python package manager)
 
 Step-by-Step Setup
-Clone the Repository
 
-bash
-git clone https://github.com/yourusername/spam-shield.git
 cd spam-shield
+
 Create Virtual Environment (Recommended)
 
-bash
+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 Install Dependencies
 
-bash
+
 pip install -r requirements.txt
 Download NLTK Data
 
-bash
+
 python -c "import nltk; nltk.download('stopwords')"
 Train the Model
 
-bash
+
 cd model
 python train_model.py
 Run the Application
 
-bash
+
 python app.py
 Access the Application
 Open your browser and go to: http://localhost:5000
@@ -159,7 +159,7 @@ nltk==3.8.1
 joblib==1.3.2
 🚀 Deployment
 Local Deployment
-bash
+
 python app.py
 Production Deployment (Example for PythonAnywhere)
 Upload all project files
@@ -188,7 +188,7 @@ Suggest Features - Share your ideas for improvement
 Submit Pull Requests - Implement new features or fix bugs
 
 Development Setup
-bash
+
 # Fork and clone the repository
 git clone https://github.com/yourusername/spam-shield.git
 cd spam-shield
