@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Shield - Email Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Spam Shield</h1>
+            <p class="subtitle">AI-Powered Email Spam Detection</p>
+        </div>
+
+        <div class="main-content">
+            <form method="POST" action="/" class="email-form">
+                <div class="form-group">
+                    <label for="email">Enter Email Content:</label>
+                    <textarea 
+                        id="email" 
+                        name="email" 
+                        placeholder="Paste the email content here to check if it's spam..." 
+                        rows="10"
+                        required>{{ email_text }}</textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">
+                        🎯 Analyze Email
+                    </button>
+                    <a href="/" class="btn btn-secondary">🗑️ Clear</a>
+                </div>
+            </form>
+
+            {% if result %}
+            <div class="result-section">
+                <div class="result-card {{ 'spam' if result == 'SPAM' else 'ham' }}">
+                    <div class="result-header">
+                        <h2>
+                            {% if result == 'SPAM' %}
+                            ⚠️ SPAM DETECTED!
+                            {% else %}
+                            ✅ LEGITIMATE EMAIL
+                            {% endif %}
+                        </h2>
+                    </div>
+                    
+                    <div class="confidence-meter">
+                        <div class="meter-labels">
+                            <span>Not Spam</span>
+                            <span>Spam</span>
+                        </div>
+                        <div class="meter-bar">
+                            <div class="meter-fill {{ 'spam-fill' if result == 'SPAM' else 'ham-fill' }}" 
+                                style="width: {{ confidence }}%">
+                            </div>
+                        </div>
+                        <div class="confidence-score">
+                            Confidence: <strong>{{ "%.2f"|format(confidence) }}%</strong>
+                        </div>
+                    </div>
+
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span class="label">Classification:</span>
+                            <span class="value {{ 'spam-text' if result == 'SPAM' else 'ham-text' }}">
+                                {{ result }}
+                            </span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Spam Probability:</span>
+                            <span class="value">
+                                {{ "%.2f"|format(confidence if result == 'SPAM' else (100 - confidence)) }}%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="features">
+            <h3>How it works:</h3>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span class="icon">🤖</span>
+                    <h4>AI Powered</h4>
+                    <p>Uses machine learning to analyze email patterns</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">⚡</span>
+                    <h4>Real-time Analysis</h4>
+                    <p>Get instant results with confidence scores</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🔒</span>
+                    <h4>Privacy First</h4>
+                    <p>Your emails are processed securely and not stored</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-resize textarea
+        const textarea = document.getElementById('email');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+    </script>
+</body>
+</html>
