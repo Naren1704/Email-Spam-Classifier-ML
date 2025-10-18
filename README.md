@@ -1,7 +1,6 @@
 🛡️ Spam Shield - AI Email Spam Classifier
 A powerful machine learning web application that classifies emails as spam or legitimate using Natural Language Processing and Flask.
 
-https://img.shields.io/badge/Spam-Shield-red https://img.shields.io/badge/Python-3.8%252B-blue https://img.shields.io/badge/Flask-2.3-green https://img.shields.io/badge/ML-Naive%2520Bayes-orange
 
 🎯 Overview
 Spam Shield is an intelligent email classification system that uses machine learning to detect spam emails with high accuracy. The application features a modern web interface where users can input email content and get instant classification results with confidence scores.
