@@ -1,6 +1,8 @@
 🛡️ Spam Shield - AI Email Spam Classifier
 A powerful machine learning web application that classifies emails as spam or legitimate using Natural Language Processing and Flask.
 
+https://img.shields.io/badge/Spam-Shield-red https://img.shields.io/badge/Python-3.8%252B-blue https://img.shields.io/badge/Flask-2.3-green https://img.shields.io/badge/ML-Naive%2520Bayes-orange
+
 🎯 Overview
 Spam Shield is an intelligent email classification system that uses machine learning to detect spam emails with high accuracy. The application features a modern web interface where users can input email content and get instant classification results with confidence scores.
 
@@ -61,31 +63,31 @@ pip (Python package manager)
 Step-by-Step Setup
 Clone the Repository
 
+bash
 git clone https://github.com/yourusername/spam-shield.git
 cd spam-shield
-
 Create Virtual Environment (Recommended)
 
+bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
 Install Dependencies
 
+bash
 pip install -r requirements.txt
-
 Download NLTK Data
 
+bash
 python -c "import nltk; nltk.download('stopwords')"
-
 Train the Model
 
+bash
 cd model
 python train_model.py
-
 Run the Application
 
+bash
 python app.py
-
 Access the Application
 Open your browser and go to: http://localhost:5000
 
@@ -102,7 +104,6 @@ spam-shield/
 │   └── index.html        # Web interface
 └── static/
     └── style.css         # Styling
-    
 🧪 Usage Examples
 Test with Sample Emails:
 🚩 SPAM Examples:
@@ -188,7 +189,7 @@ Suggest Features - Share your ideas for improvement
 Submit Pull Requests - Implement new features or fix bugs
 
 Development Setup
-
+bash
 # Fork and clone the repository
 git clone https://github.com/yourusername/spam-shield.git
 cd spam-shield
@@ -202,6 +203,8 @@ python app.py
 # Commit and push
 git commit -m "Add amazing feature"
 git push origin feature/amazing-feature
+
+
 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
@@ -213,6 +216,7 @@ Scikit-learn - Machine learning library
 Flask - Web framework
 
 Contributors - Everyone who helped improve this project
+
 
 🔮 Future Enhancements
 User authentication and history
